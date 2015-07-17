@@ -504,7 +504,8 @@ namespace GpsTest
             updateDataHandler = new EventHandler(UpdateData);
          
             status.Text = "";
-            
+
+
             //status.Width = Screen.PrimaryScreen.WorkingArea.Width;
             //status.Height = (Screen.PrimaryScreen.WorkingArea.Height - btn_Restart.Height)/2;
 
@@ -517,6 +518,11 @@ namespace GpsTest
                 this.gps.Open();
                 status.Text += "gps.Open()\r\n";
             }
+
+            //check service state
+            GPS_Sample8.gpsService.ioctl_service state = GPS_Sample8.gpsService.ServiceStatus;
+            GPS_Sample8.gpsService.ServiceStatus = GPS_Sample8.gpsService.ioctl_service.IOCTL_SERVICE_START;
+
             if (this.gps.Opened)
             {
                 gps.DeviceStateChanged += new DeviceStateChangedEventHandler(gps_DeviceStateChanged);
