@@ -96,7 +96,11 @@
     <Compile Include="GPSForm1.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< .mine
+    <Compile Include="gpsService.cs" />
+=======
     <Compile Include="nmea.cs" />
+>>>>>>> .r164
     <Compile Include="Port.cs" />
     <Compile Include="PortCapabilities.cs" />
     <Compile Include="PortSettings.cs" />
